@@ -10,7 +10,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.preprocessing import StandardScaler
 from tensorflow import keras
-
 # Download dataset
 url = "https://www.openml.org/data/download/22102255/dataset"
 r = requests.get(url, allow_redirects=True)
@@ -95,7 +94,6 @@ XTrainScaledTrain, XValidation, y_train_train, y_valid = train_test_split(XTrain
 model.fit(XTrainScaledTrain,y_train_train,epochs=30,callbacks=[early_stopping_callback],validation_data=(XValidation,y_valid))
 model.evaluate(XTestScaled,y_test)
 model.save("Round_Predictions_CSGO.h5")
-
 """
 Data Format:
 bomb-planted is boolean
