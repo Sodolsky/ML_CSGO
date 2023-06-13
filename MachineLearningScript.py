@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
 import matplotlib.pyplot as plt
 import pandas as pd
 import requests
@@ -94,29 +91,3 @@ XTrainScaledTrain, XValidation, y_train_train, y_valid = train_test_split(XTrain
 model.fit(XTrainScaledTrain,y_train_train,epochs=30,callbacks=[early_stopping_callback],validation_data=(XValidation,y_valid))
 model.evaluate(XTestScaled,y_test)
 model.save("Round_Predictions_CSGO.h5")
-"""
-Data Format:
-bomb-planted is boolean
-rest are float numbers
-['bomb_planted',
- 'ct_health',
- 'ct_armor',
- 't_armor',
- 'ct_helmets',
- 't_helmets',
- 'ct_defuse_kits',
- 'ct_players_alive',
- 'ct_weapon_ak47',
- 't_weapon_ak47',
- 'ct_weapon_awp',
- 'ct_weapon_m4a4',
- 'ct_weapon_sg553',
- 't_weapon_sg553',
- 'ct_weapon_usps',
- 'ct_grenade_hegrenade',
- 'ct_grenade_flashbang',
- 't_grenade_flashbang',
- 'ct_grenade_smokegrenade',
- 'ct_grenade_incendiarygrenade',
- ]
-"""
