@@ -7,6 +7,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.preprocessing import StandardScaler
 from tensorflow import keras
+
 # Download dataset
 url = "https://www.openml.org/data/download/22102255/dataset"
 r = requests.get(url, allow_redirects=True)
@@ -65,6 +66,7 @@ XTrainScaled = scaler.fit_transform(X_train)
 XTestScaled = scaler.transform(X_test)
 
 # Train KNN classifier
+"""
 knn = KNeighborsClassifier()
 knn.fit(XTestScaled, y_test)
 knn_score = knn.score(XTestScaled, y_test)
@@ -73,7 +75,7 @@ knn_score = knn.score(XTestScaled, y_test)
 forest = RandomForestClassifier(n_jobs=-1)
 forest.fit(XTrainScaled, y_train)
 forest_score = forest.score(XTestScaled, y_test)
-
+"""
 # Create a neural network model
 model = keras.models.Sequential()
 model.add(keras.layers.Input(shape=(20,)))
