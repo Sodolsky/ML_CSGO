@@ -41,7 +41,7 @@ df = pd.read_csv("df.csv")
 # Encode the target variable
 df['t_win'] = df.round_winner.astype("category").cat.codes
 
-# Calculate correlations and select top 25 columns
+# Calculate correlations and select columns that have the highest correlation
 correlations = df[columns+["t_win"]].corr(numeric_only=True)
 selected_columns = []
 for col in columns+["t_win"]:
@@ -65,17 +65,7 @@ scaler = StandardScaler()
 XTrainScaled = scaler.fit_transform(X_train)
 XTestScaled = scaler.transform(X_test)
 
-# Train KNN classifier
-"""
-knn = KNeighborsClassifier()
-knn.fit(XTestScaled, y_test)
-knn_score = knn.score(XTestScaled, y_test)
 
-# Train Random Forest classifier
-forest = RandomForestClassifier(n_jobs=-1)
-forest.fit(XTrainScaled, y_train)
-forest_score = forest.score(XTestScaled, y_test)
-"""
 # Create a neural network model
 model = keras.models.Sequential()
 model.add(keras.layers.Input(shape=(20,)))
