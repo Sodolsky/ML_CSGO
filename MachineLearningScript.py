@@ -12,7 +12,7 @@ from termcolor import colored
 
 isDataCashed = os.path.isfile("dataset.txt")
 if isDataCashed==False: 
-    print(colored("Pobieranie danych z internetu... Czemu tego nie cashujemy??? 🤔 ","cyan"))
+    print(colored("Pobieranie danych z internetu... Czemu tego nie cashujemy? 🤔 ","cyan"))
     # Pobranie zbioru danych
     url = "https://www.openml.org/data/download/22102255/dataset"
     r = requests.get(url, allow_redirects=True)
