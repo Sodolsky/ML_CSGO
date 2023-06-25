@@ -19,7 +19,7 @@ if isDataCashed==False:
     with open("dataset.txt", "wb") as f:
         f.write(r.content)
     print(colored("Odczytywanie danych i formatowanie ich... ","cyan"))
-print(colored("Dane zostały scachowane 😊","green"))
+print(colored("Dane zostały pobrane z cache 😊","green"))
 # Odczytanie danych z pliku zbioru
 data = []
 with open("dataset.txt", "r") as f:
